@@ -1,8 +1,9 @@
 import { Image, StyleSheet, Text, View } from "react-native"
 import React from "react"
 import CustomButton from "../components/atoms/CustomButton"
-import logoImage from "../assets/heresmypet_logo_inverted.png"
 import { SvgUri } from "react-native-svg"
+
+const logoImage = require("../assets/heresmypet_logo_inverted.png")
 
 export default function Authentication({ navigation }: any) {
   return (
