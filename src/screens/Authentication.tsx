@@ -1,12 +1,18 @@
-import { StyleSheet, Text, View } from "react-native"
+import { Image, StyleSheet, Text, View } from "react-native"
 import React from "react"
 import CustomButton from "../components/atoms/CustomButton"
-import { SvgFromUri, SvgUri } from "react-native-svg"
+import logoImage from "../assets/heresmypet_logo_inverted.png"
+import { SvgUri } from "react-native-svg"
 
 export default function Authentication({ navigation }: any) {
   return (
     <>
       <View style={styles.container}>
+        <Image
+          style={styles.logoImage}
+          source={logoImage}
+          resizeMode="contain"
+        ></Image>
         <View style={styles.topWave}>
           <SvgUri
             scaleX={1.1}
@@ -17,7 +23,7 @@ export default function Authentication({ navigation }: any) {
           ></SvgUri>
         </View>
         <View style={styles.textsContainer}>
-          <Text style={styles.mainText}>Identify and locate your pet</Text>
+          <Text style={styles.mainText}>{"Identify and\nlocate your pet"}</Text>
           <Text style={styles.subText}>
             Protect your pet{" "}
             <Text style={{ color: "#3B74E2" }}>without spending</Text> too much.
@@ -62,6 +68,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#fff",
   },
+  logoImage: {
+    position: "absolute",
+    left: 0,
+    top: 0,
+    height: 120,
+    width: 200,
+    // borderColor: "red",
+    // borderWidth: 2,
+    resizeMode: "cover",
+  },
   topWave: {
     position: "absolute",
     // borderColor: "red",
@@ -81,6 +97,7 @@ const styles = StyleSheet.create({
   },
   mainText: {
     fontSize: 24,
+    paddingTop: 150,
     marginBottom: 25,
     fontWeight: "bold",
     textAlign: "center",

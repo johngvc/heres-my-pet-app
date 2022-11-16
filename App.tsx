@@ -31,7 +31,11 @@ export default function App() {
       <Stack.Navigator initialRouteName="Authentication">
         {/* Onboarding */}
         <Stack.Group>
-          <Stack.Screen name="Authentication" component={Authentication} />
+          <Stack.Screen
+            name="Authentication"
+            component={Authentication}
+            options={{ headerShown: false, statusBarColor: "#045A7C" }}
+          />
           <Stack.Screen name="Log in" component={Login} />
           <Stack.Screen name="Sign Up" component={Signup} />
           <Stack.Screen name="Welcome" component={Welcome} />
