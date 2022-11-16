@@ -37,7 +37,11 @@ export default function App() {
             options={{ headerShown: false, statusBarColor: "#045A7C" }}
           />
           <Stack.Screen name="Log in" component={Login} />
-          <Stack.Screen name="Sign Up" component={Signup} />
+          <Stack.Screen
+            name="Sign Up"
+            component={Signup}
+            options={{ headerShown: false }}
+          />
           <Stack.Screen name="Welcome" component={Welcome} />
         </Stack.Group>
         {/* Main App */}
