@@ -1,11 +1,16 @@
 import { StyleSheet, Text, TextInput, View } from 'react-native'
 import React from 'react'
 
-const CustomTextInput = ({ label, inputStyle, labelStyle }: any) => {
+const CustomTextInput = ({
+  label = 'label',
+  inputStyle = null,
+  labelStyle = null,
+  password = false,
+}: any) => {
   return (
     <View style={[styles.inputFieldContainer, inputStyle]}>
       <Text style={[styles.inputLabel, labelStyle]}>{label}</Text>
-      <TextInput style={styles.input}></TextInput>
+      <TextInput style={styles.input} secureTextEntry={password}></TextInput>
     </View>
   )
 }

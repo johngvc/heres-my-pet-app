@@ -21,8 +21,8 @@ export default function Signup({ navigation }: any) {
       <View style={styles.inputFieldsContainer}>
         <CustomTextInput label="USERNAME" />
         <CustomTextInput label="EMAIL" />
-        <CustomTextInput label="PASSWORD" />
-        <CustomTextInput label="CONFIRM PASSWORD" />
+        <CustomTextInput label="PASSWORD" password={true} />
+        <CustomTextInput label="CONFIRM PASSWORD" password={true} />
       </View>
 
       <View style={styles.buttonsContainer}>

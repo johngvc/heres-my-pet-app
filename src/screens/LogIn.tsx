@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, TextInput } from 'react-native'
+import { StyleSheet, Text, View, Image, TextInput, Alert } from 'react-native'
 import React from 'react'
 import CustomButton from '../components/atoms/CustomButton'
 import CustomTextInput from '../components/atoms/CustomTextInput'
@@ -20,7 +20,16 @@ export default function Login({ navigation }: any) {
       </View>
       <View style={styles.inputFieldsContainer}>
         <CustomTextInput label="USERNAME" />
-        <CustomTextInput label="PASSWORD" />
+        <CustomTextInput label="PASSWORD" password={true} />
+        <CustomButton
+          onPress={() => {
+            Alert.alert('Forgot to implement forgot password screen')
+          }}
+          buttonStyle={styles.forgotPasswordButton}
+          textStyle={styles.forgotPasswordText}
+        >
+          forgot password?
+        </CustomButton>
       </View>
 
       <View style={styles.buttonsContainer}>
@@ -107,6 +116,15 @@ const styles = StyleSheet.create({
     color: 'black',
     fontSize: 12,
     textDecorationLine: 'underline',
+    fontWeight: 'normal',
+  },
+  forgotPasswordButton: {
+    borderWidth: 0,
+    alignSelf: 'flex-end',
+  },
+  forgotPasswordText: {
+    color: 'black',
+    fontSize: 12,
     fontWeight: 'normal',
   },
 })
