@@ -1,16 +1,16 @@
-import { NavigationContainer } from "@react-navigation/native"
-import { StyleSheet, Text, View } from "react-native"
-import { createNativeStackNavigator } from "@react-navigation/native-stack"
-import Authentication from "./src/screens/Authentication"
-import Login from "./src/screens/LogIn"
-import MyPets from "./src/screens/MyPets"
-import Signup from "./src/screens/SignUp"
-import Welcome from "./src/screens/Welcome"
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
-import Notifications from "./src/screens/Notifications"
-import Profile from "./src/screens/Profile"
-import PetRegistration from "./src/screens/PetRegistration"
-import PetProfile from "./src/screens/PetProfile"
+import { NavigationContainer } from '@react-navigation/native'
+import { StyleSheet, Text, View } from 'react-native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import Authentication from './src/screens/Authentication'
+import Login from './src/screens/LogIn'
+import MyPets from './src/screens/MyPets'
+import Signup from './src/screens/SignUp'
+import Welcome from './src/screens/Welcome'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import Notifications from './src/screens/Notifications'
+import Profile from './src/screens/Profile'
+import PetRegistration from './src/screens/PetRegistration'
+import PetProfile from './src/screens/PetProfile'
 
 const Stack = createNativeStackNavigator()
 const Tab = createBottomTabNavigator()
@@ -34,7 +34,7 @@ export default function App() {
           <Stack.Screen
             name="Authentication"
             component={Authentication}
-            options={{ headerShown: false, statusBarColor: "#045A7C" }}
+            options={{ headerShown: false, statusBarColor: '#045A7C' }}
           />
           <Stack.Screen name="Log in" component={Login} />
           <Stack.Screen

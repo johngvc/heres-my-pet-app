@@ -1,44 +1,49 @@
-import { StyleSheet, Text, View, Button, Image, TextInput } from "react-native"
-import React from "react"
+import { StyleSheet, Text, View, Image, TextInput } from 'react-native'
+import React from 'react'
+import CustomButton from '../components/atoms/CustomButton'
+import CustomTextInput from '../components/atoms/CustomTextInput'
 
-const logoImage = require("../assets/heresmypet_logo.png")
+const logoImage = require('../assets/heresmypet_logo.png')
 
 export default function Signup({ navigation }: any) {
   return (
     <View style={styles.container}>
-      <Image
-        style={styles.logoImage}
-        source={logoImage}
-        resizeMode="contain"
-      ></Image>
+      <View style={styles.logoContainer}>
+        <Image
+          style={styles.logoImage}
+          source={logoImage}
+          resizeMode="contain"
+        ></Image>
+      </View>
+      <View style={styles.titleContainer}>
+        <Text style={styles.titleText}>SIGN UP</Text>
+      </View>
       <View style={styles.inputFieldsContainer}>
-        <View style={styles.inputFieldContainer}>
-          <Text>Input 1</Text>
-          <TextInput style={styles.input}></TextInput>
-        </View>
-        <View style={styles.inputFieldContainer}>
-          <Text>Input 1</Text>
-          <TextInput style={styles.input}></TextInput>
-        </View>
-        <View style={styles.inputFieldContainer}>
-          <Text>Input 1</Text>
-          <TextInput style={styles.input}></TextInput>
-        </View>
+        <CustomTextInput label="USERNAME" />
+        <CustomTextInput label="EMAIL" />
+        <CustomTextInput label="PASSWORD" />
+        <CustomTextInput label="CONFIRM PASSWORD" />
       </View>
 
       <View style={styles.buttonsContainer}>
-        <Button
-          title="Sign up"
+        <CustomButton
           onPress={() => {
-            navigation.replace("Welcome")
+            navigation.replace('Welcome')
           }}
-        ></Button>
-        <Button
-          title="Log in instead"
+          buttonStyle={styles.upperButton}
+          textStyle={styles.upperButtonText}
+        >
+          Sign up
+        </CustomButton>
+        <CustomButton
           onPress={() => {
-            navigation.replace("Log in")
+            navigation.replace('Log in')
           }}
-        ></Button>
+          buttonStyle={styles.lowerButton}
+          textStyle={styles.lowerButtonText}
+        >
+          Log in instead
+        </CustomButton>
       </View>
     </View>
   )
@@ -47,35 +52,63 @@ export default function Signup({ navigation }: any) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "space-between",
-    backgroundColor: "#fff",
-    padding: 20,
-  },
-  inputFieldsContainer: {
-    flex: 0.4,
-  },
-  inputFieldContainer: {
-    alignItems: "flex-start",
-    justifyContent: "center",
-    marginBottom: 30,
-    // borderColor: "red",
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
+    backgroundColor: '#fff',
+    paddingHorizontal: 60,
+    // borderColor: 'red',
     // borderWidth: 2,
   },
-  input: {
-    alignSelf: "stretch",
-    height: 40,
-    borderBottomWidth: 1,
+  inputFieldsContainer: {
+    // borderColor: 'red',
+    // borderWidth: 2,
+    alignSelf: 'stretch',
   },
-  buttonsContainer: {
-    borderColor: "red",
-    borderWidth: 2,
-    flex: 0.3,
+  logoContainer: {
+    // borderColor: 'red',
+    // borderWidth: 2,
+    justifyContent: 'center',
   },
   logoImage: {
     height: 120,
     width: 200,
-    // borderColor: "red",
+    // borderColor: 'red',
     // borderWidth: 2,
-    resizeMode: "cover",
+    resizeMode: 'cover',
+  },
+  titleContainer: {
+    // borderColor: 'red',
+    // borderWidth: 2,
+  },
+  titleText: {
+    fontSize: 25,
+    fontWeight: 'bold',
+    // borderColor: 'red',
+    // borderWidth: 2,
+  },
+  buttonsContainer: {
+    // borderColor: 'red',
+    // borderWidth: 2,
+    alignSelf: 'stretch',
+  },
+  upperButton: {
+    borderWidth: 0,
+    backgroundColor: '#045A7C',
+    borderRadius: 5,
+    height: 55,
+    marginBottom: 35,
+  },
+  lowerButton: {
+    borderWidth: 0,
+  },
+  upperButtonText: {
+    fontSize: 17,
+    fontWeight: 'normal',
+  },
+  lowerButtonText: {
+    color: 'black',
+    fontSize: 12,
+    textDecorationLine: 'underline',
+    fontWeight: 'normal',
   },
 })

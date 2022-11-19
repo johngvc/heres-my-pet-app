@@ -1,9 +1,9 @@
-import { Image, StyleSheet, Text, View } from "react-native"
-import React from "react"
-import CustomButton from "../components/atoms/CustomButton"
-import { SvgUri } from "react-native-svg"
+import { Image, StyleSheet, Text, View } from 'react-native'
+import React from 'react'
+import CustomButton from '../components/atoms/CustomButton'
+import { SvgUri } from 'react-native-svg'
 
-const logoImage = require("../assets/heresmypet_logo_inverted.png")
+const logoImage = require('../assets/heresmypet_logo_inverted.png')
 
 export default function Authentication({ navigation }: any) {
   return (
@@ -24,25 +24,25 @@ export default function Authentication({ navigation }: any) {
           ></SvgUri>
         </View>
         <View style={styles.textsContainer}>
-          <Text style={styles.mainText}>{"Identify and\nlocate your pet"}</Text>
+          <Text style={styles.mainText}>{'Identify and\nlocate your pet'}</Text>
           <Text style={styles.subText}>
-            Protect your pet{" "}
-            <Text style={{ color: "#3B74E2" }}>without spending</Text> too much.
+            Protect your pet{' '}
+            <Text style={{ color: '#3B74E2' }}>without spending</Text> too much.
           </Text>
         </View>
         <View style={styles.buttonsContainer}>
           <CustomButton
             onPress={() => {
-              navigation.replace("Sign Up")
+              navigation.replace('Sign Up')
             }}
-            style={styles.upperButton}
+            buttonStyle={styles.upperButton}
           >
             Sign up
           </CustomButton>
           <CustomButton
-            style={styles.lowerButton}
+            buttonStyle={styles.lowerButton}
             onPress={() => {
-              navigation.replace("Log in")
+              navigation.replace('Log in')
             }}
           >
             Login
@@ -65,34 +65,34 @@ export default function Authentication({ navigation }: any) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "flex-start",
-    alignItems: "center",
-    backgroundColor: "#fff",
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    backgroundColor: '#fff',
   },
   logoImage: {
-    position: "absolute",
+    position: 'absolute',
     left: 0,
     top: 0,
     height: 120,
     width: 200,
     // borderColor: "red",
     // borderWidth: 2,
-    resizeMode: "cover",
+    resizeMode: 'cover',
   },
   topWave: {
-    position: "absolute",
+    position: 'absolute',
     // borderColor: "red",
     // borderWidth: 2,
-    width: "100%",
-    height: "25.5%",
+    width: '100%',
+    height: '25.5%',
     zIndex: -1,
   },
   bottomWave: {
-    position: "absolute",
+    position: 'absolute',
     // borderColor: "red",
     // borderWidth: 2,
-    width: "100%",
-    height: "25.5%",
+    width: '100%',
+    height: '25.5%',
     bottom: 0,
     zIndex: -1,
   },
@@ -100,44 +100,44 @@ const styles = StyleSheet.create({
     fontSize: 24,
     paddingTop: 150,
     marginBottom: 25,
-    fontWeight: "bold",
-    textAlign: "center",
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
   subText: {
     fontSize: 18,
-    fontWeight: "bold",
-    textAlign: "center",
-    color: "#949494",
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: '#949494',
   },
   textsContainer: {
     flex: 0.7,
-    color: "#464646",
+    color: '#464646',
     // borderColor: "red",
     // borderWidth: 2,
     maxWidth: 250,
-    textAlign: "center",
-    alignItems: "center",
-    justifyContent: "center",
+    textAlign: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   buttonsContainer: {
     flex: 0.3,
     // borderColor: "blue",
     // borderWidth: 2,
-    alignItems: "center",
+    alignItems: 'center',
     minWidth: 70,
   },
   upperButton: {
-    borderColor: "white",
+    borderColor: 'white',
     borderWidth: 1,
     margin: 5,
     minWidth: 300,
     borderRadius: 10,
-    flex: 0.35,
+    height: 70,
   },
   lowerButton: {
     borderWidth: 0,
-    marginTop: 50,
+    marginTop: 30,
     minWidth: 200,
-    flex: 0.2,
+    height: 70,
   },
 })
