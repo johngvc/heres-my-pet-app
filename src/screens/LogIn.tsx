@@ -2,63 +2,74 @@ import { StyleSheet, Text, View, Image, TextInput, Alert } from 'react-native'
 import React from 'react'
 import CustomButton from '../components/atoms/CustomButton'
 import CustomTextInput from '../components/atoms/CustomTextInput'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 const logoImage = require('../assets/heresmypet_logo.png')
 
 export default function Login({ navigation }: any) {
   return (
-    <View style={styles.container}>
-      <View style={styles.logoContainer}>
-        <Image
-          style={styles.logoImage}
-          source={logoImage}
-          resizeMode="contain"
-        ></Image>
-      </View>
-      <View style={styles.titleContainer}>
-        <Text style={styles.titleText}>LOG IN</Text>
-      </View>
-      <View style={styles.inputFieldsContainer}>
-        <CustomTextInput label="USERNAME" />
-        <CustomTextInput label="PASSWORD" password={true} />
-        <CustomButton
-          onPress={() => {
-            Alert.alert('Forgot to implement forgot password screen')
-          }}
-          buttonStyle={styles.forgotPasswordButton}
-          textStyle={styles.forgotPasswordText}
-        >
-          forgot password?
-        </CustomButton>
-      </View>
+    <KeyboardAwareScrollView
+      enableOnAndroid={true}
+      enableResetScrollToCoords={false}
+      bounces={false}
+      contentContainerStyle={{ flexGrow: 1 }}
+      contentInsetAdjustmentBehavior="always"
+      overScrollMode="always"
+      showsVerticalScrollIndicator={true}
+    >
+      <View style={styles.container}>
+        <View style={styles.logoContainer}>
+          <Image
+            style={styles.logoImage}
+            source={logoImage}
+            resizeMode="contain"
+          ></Image>
+        </View>
+        <View style={styles.titleContainer}>
+          <Text style={styles.titleText}>LOG IN</Text>
+        </View>
+        <View style={styles.inputFieldsContainer}>
+          <CustomTextInput label="USERNAME" />
+          <CustomTextInput label="PASSWORD" password={true} />
+          <CustomButton
+            onPress={() => {
+              Alert.alert('Forgot to implement forgot password screen')
+            }}
+            buttonStyle={styles.forgotPasswordButton}
+            textStyle={styles.forgotPasswordText}
+          >
+            forgot password?
+          </CustomButton>
+        </View>
 
-      <View style={styles.buttonsContainer}>
-        <CustomButton
-          onPress={() => {
-            navigation.replace('Home')
-          }}
-          buttonStyle={styles.upperButton}
-          textStyle={styles.upperButtonText}
-        >
-          Log in
-        </CustomButton>
-        <CustomButton
-          onPress={() => {
-            navigation.replace('Sign Up')
-          }}
-          buttonStyle={styles.lowerButton}
-          textStyle={styles.lowerButtonText}
-        >
-          Sign up instead
-        </CustomButton>
+        <View style={styles.buttonsContainer}>
+          <CustomButton
+            onPress={() => {
+              navigation.replace('Home')
+            }}
+            buttonStyle={styles.upperButton}
+            textStyle={styles.upperButtonText}
+          >
+            Log in
+          </CustomButton>
+          <CustomButton
+            onPress={() => {
+              navigation.replace('Sign Up')
+            }}
+            buttonStyle={styles.lowerButton}
+            textStyle={styles.lowerButtonText}
+          >
+            Sign up instead
+          </CustomButton>
+        </View>
       </View>
-    </View>
+    </KeyboardAwareScrollView>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexGrow: 1,
     alignItems: 'center',
     justifyContent: 'space-evenly',
     backgroundColor: '#fff',

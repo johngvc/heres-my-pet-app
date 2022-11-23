@@ -1,57 +1,67 @@
-import { StyleSheet, Text, View, Image, TextInput } from 'react-native'
+import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
 import CustomButton from '../components/atoms/CustomButton'
 import CustomTextInput from '../components/atoms/CustomTextInput'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 const logoImage = require('../assets/heresmypet_logo.png')
 
 export default function Signup({ navigation }: any) {
   return (
-    <View style={styles.container}>
-      <View style={styles.logoContainer}>
-        <Image
-          style={styles.logoImage}
-          source={logoImage}
-          resizeMode="contain"
-        ></Image>
+    <KeyboardAwareScrollView
+      enableOnAndroid={true}
+      enableResetScrollToCoords={false}
+      bounces={false}
+      contentContainerStyle={{ flexGrow: 1 }}
+      contentInsetAdjustmentBehavior="always"
+      overScrollMode="always"
+      showsVerticalScrollIndicator={true}
+    >
+      <View style={styles.container}>
+        <View style={styles.logoContainer}>
+          <Image
+            style={styles.logoImage}
+            source={logoImage}
+            resizeMode="contain"
+          ></Image>
+        </View>
+        <View style={styles.titleContainer}>
+          <Text style={styles.titleText}>SIGN UP</Text>
+        </View>
+        <View style={styles.inputFieldsContainer}>
+          <CustomTextInput label="USERNAME" />
+          <CustomTextInput label="EMAIL" />
+          <CustomTextInput label="PASSWORD" password={true} />
+          <CustomTextInput label="CONFIRM PASSWORD" password={true} />
+        </View>
+        <View style={styles.buttonsContainer}>
+          <CustomButton
+            onPress={() => {
+              navigation.replace('Welcome')
+            }}
+            buttonStyle={styles.upperButton}
+            textStyle={styles.upperButtonText}
+          >
+            Sign up
+          </CustomButton>
+          <CustomButton
+            onPress={() => {
+              navigation.replace('Log in')
+            }}
+            buttonStyle={styles.lowerButton}
+            textStyle={styles.lowerButtonText}
+          >
+            Log in instead
+          </CustomButton>
+        </View>
       </View>
-      <View style={styles.titleContainer}>
-        <Text style={styles.titleText}>SIGN UP</Text>
-      </View>
-      <View style={styles.inputFieldsContainer}>
-        <CustomTextInput label="USERNAME" />
-        <CustomTextInput label="EMAIL" />
-        <CustomTextInput label="PASSWORD" password={true} />
-        <CustomTextInput label="CONFIRM PASSWORD" password={true} />
-      </View>
-
-      <View style={styles.buttonsContainer}>
-        <CustomButton
-          onPress={() => {
-            navigation.replace('Welcome')
-          }}
-          buttonStyle={styles.upperButton}
-          textStyle={styles.upperButtonText}
-        >
-          Sign up
-        </CustomButton>
-        <CustomButton
-          onPress={() => {
-            navigation.replace('Log in')
-          }}
-          buttonStyle={styles.lowerButton}
-          textStyle={styles.lowerButtonText}
-        >
-          Log in instead
-        </CustomButton>
-      </View>
-    </View>
+    </KeyboardAwareScrollView>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexGrow: 1,
     alignItems: 'center',
     justifyContent: 'space-evenly',
     backgroundColor: '#fff',
