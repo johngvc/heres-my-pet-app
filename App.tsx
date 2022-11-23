@@ -30,26 +30,36 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Authentication">
         {/* Onboarding */}
-        <Stack.Group>
+        <Stack.Group screenOptions={{ headerShown: false }}>
           <Stack.Screen
             name="Authentication"
             component={Authentication}
             options={{
-              headerShown: false,
               statusBarColor: '#045A7C',
             }}
           />
           <Stack.Screen
             name="Log in"
             component={Login}
-            options={{ headerShown: false }}
+            options={{
+              statusBarStyle: 'dark',
+            }}
           />
           <Stack.Screen
             name="Sign Up"
             component={Signup}
-            options={{ headerShown: false }}
+            options={{
+              statusBarStyle: 'dark',
+            }}
           />
-          <Stack.Screen name="Welcome" component={Welcome} />
+          <Stack.Screen
+            name="Welcome"
+            component={Welcome}
+            options={{
+              statusBarStyle: 'dark',
+              statusBarColor: '#F43471',
+            }}
+          />
         </Stack.Group>
         {/* Main App */}
         <Stack.Group>
